@@ -1,6 +1,6 @@
 import sys, os
 from optparse import OptionParser
-
+# simple pythin to learn GitHub
 def rmdup(seq, rmitem=None):
    seen = set()
    seen_add = set.add
