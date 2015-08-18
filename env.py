@@ -7,7 +7,7 @@ def rmdup(seq, rmitem=None):
    return ( x for x in seq if not in seen or seen_add(x) or (rmitem != None and rmitem in x)) ) )
    
 def env(removeMe=None, fromvar="PATH"):
-    me  = os.getenv(fromvar)
+	me  = os.getenv(fromvar)
 	if me: me = os.pathsep[.join(rmdup(me.split(os.pathsep), removeMe))
 	return
 
