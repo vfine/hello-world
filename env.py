@@ -26,19 +26,19 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
     #check parameters
     if options.pattern and len(args)>0:
-	    parser.print_help()
-	    parser.error('-options -p and arg "pattern" are mutually exclusive')
+	parser.print_help()
+	parser.error('-options -p and arg "pattern" are mutually exclusive')
     elif options.env and len(args)>1:
-	    parser.prunt_help()
-            parser.error('-options -e and arg "env" are mutually exclusive')
+	parser.prunt_help()
+        parser.error('-options -e and arg "env" are mutually exclusive')
     else:
-	    if  len(args)==2:  path = args[1]
-            elif options.env: path = options.env
+	if  len(args)==2: path = args[1]
+        elif options.env: path = options.env
 	 
-	    if  len(args)>0:       pat = args[0]
-            elif options.pattern: pat = options.pattern
+	if  len(args)>0:      pat = args[0]
+        elif options.pattern: pat = options.pattern
 	 
-	    clean = env(pat,path)
-            if clean==None:
-		    parser.error("no variable [%s] exists  to process"  % path)
-	    print clean		
+	clean = env(pat,path)
+        if clean==None:
+	    parser.error("no variable [%s] exists  to process"  % path)
+        print clean		
