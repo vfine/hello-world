@@ -3,9 +3,7 @@ import sys, os
 from optparse import OptionParser
 # simple python to learn GitHub
 def rmdup(seq, rmitem=None):
-   seen = set()
-   seen_add = seen.add
-   return ( x for x in seq if not ((x in seen or seen_add(x) or (rmitem != None and rmitem in x)) ) )
+   return ( x for x in set(seq) if  (rmitem == None or not rmitem in x) )
    
 def env(removeMe=None, fromvar="PATH"):
 	me  = os.getenv(fromvar)
