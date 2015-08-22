@@ -3,6 +3,7 @@ import sys, os
 from optparse import OptionParser
 # simple python to learn GitHub
 def rmdup(seq, rmitem=None):
+   # it is not good here because it does change the order , We have to preserve it !
    return ( x for x in set(seq) if  (rmitem == None or not rmitem in x) )
    
 def env(removeMe=None, fromvar="PATH"):
