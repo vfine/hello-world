@@ -1,0 +1,32 @@
+[user]
+	name = Chris Green
+	email = greenc@fnal.gov
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+[core]
+	excludesfile = /home/greenc/.gitignore
+[branch "work"]
+	remote = origin
+	merge = refs/heads/master
+	rebase = true
+[branch "master"]
+	rebase = true
+[branch]
+	autosetuprebase = always
+[alias]
+	alias = "!foo() { [ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1;};foo"
+	aliases = !git config --get-regexp 'alias\\..*' | colrm 1 6 | sed 's/[ ]/ = /'
+	mf = merge --ff-only
+	mw = merge --ff-only work
+ 	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgi = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+	k = !gitk
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
