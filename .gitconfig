@@ -1,13 +1,13 @@
 [user]
-	name = Chris Green
-	email = greenc@fnal.gov
+	name  =Valeri Fine
+	email =val.fine@gmail.com
 [color]
 	status = auto
 	branch = auto
 	diff = auto
 	interactive = auto
 [core]
-	excludesfile = /home/greenc/.gitignore
+	excludesfile = $HOME/.gitignore
 [branch "work"]
 	remote = origin
 	merge = refs/heads/master
